@@ -8,7 +8,7 @@ RUN mv apache-tomcat-9.0.56/* /opt/tomcat/.
 RUN yum -y install java
 RUN java -version
 WORKDIR /opt/tomcat/webapps
-COPY SampleWebApp.war /opt/tomcat/webapps/
+COPY /var/lib/jenkins/workspace/docker_build_project/server/target/server.jar /opt/tomcat/webapps/
 EXPOSE 8080
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
 
